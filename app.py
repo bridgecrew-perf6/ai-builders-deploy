@@ -7,7 +7,6 @@ classifier = pipeline(model='zdreiosis/ff_analysis_4', return_all_scores=True)
 labels = classifier([summary])
 
 st.write('Predicted labels: ')
-for x in labels:
-  st.write(x)
-
+for x in labels[0]:
+  st.write(x['label'] + ':', x['score'])
 
