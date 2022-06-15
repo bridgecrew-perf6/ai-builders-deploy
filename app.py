@@ -2,11 +2,12 @@ import streamlit as st
 from transformers import pipeline
 
 summary = st.text_input('Work summary to predict from', 'Two knights set off on an adventure.')
-st.write('Work summary: ', summary)
 
-#classifier = pipeline(model='zdreiosis/ff_analysis_4', return_all_scores=True)
-#labels = classifier(['Two knights go on an adventure.'])
+classifier = pipeline(model='zdreiosis/ff_analysis_4', return_all_scores=True)
+labels = classifier([summary])
 
-#st.write(labels)
+st.write('Predicted labels: ')
+for x in labels:
+  st.write(x)
 
 
