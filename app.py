@@ -2,7 +2,7 @@ import streamlit as st
 from transformers import pipeline
 
 summary = st.text_area('Work summary to predict from', value='Two knights set off on an adventure.')
-predmodel = st.selectbox(['zdreiosis/ff_analysis_5', 'zdreiosis/ff_analysis_4'])
+predmodel = st.selectbox('model', ('zdreiosis/ff_analysis_5', 'zdreiosis/ff_analysis_4'))
 classifier = pipeline(model=predmodel, return_all_scores=True)
 labels = classifier([summary])
 
