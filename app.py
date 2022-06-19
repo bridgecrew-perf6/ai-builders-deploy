@@ -24,5 +24,5 @@ for x in ksorted[0]:
   st.write(x['label'] + ':', x['score'])
   
 st.write('---')
-st.write('check out the [blog post!](https://medium.com/@syntrp2/nlp-for-genre-predictions-on-ffnet-an-antithesis-to-utilitarianism-4380524ca1fc)')
+st.write('check out the [blog post](https://medium.com/@syntrp2/nlp-for-genre-predictions-on-ffnet-an-antithesis-to-utilitarianism-4380524ca1fc)!')
 
