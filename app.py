@@ -21,4 +21,7 @@ ksorted = [sorted(labels[y], key=lambda x: x['score'], reverse=True) for y in ra
 st.write('Predicted labels: ')
 for x in ksorted[0]:
   st.write(x['label'] + ':', x['score'])
+  
+  
+st.write('check out the [blog post!](https://medium.com/@syntrp2/nlp-for-genre-predictions-on-ffnet-an-antithesis-to-utilitarianism-4380524ca1fc)')
 
