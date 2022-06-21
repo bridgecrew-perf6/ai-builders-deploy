@@ -12,13 +12,10 @@ elif predmodel == 'zdreiosis/ff_analysis_5':
 
 revision = st.selectbox('model version', revisionlist)
 st.write('(Recommended setup: zdr5/1454370)')
-
-
-def define_classifier():
-  classifier = pipeline(model=predmodel, revision=revision, return_all_scores=True)
+  
 
 if st.button('Load model'):
-  define_classifier()
+  classifier = pipeline(model=predmodel, revision=revision, return_all_scores=True)
   labels = classifier([summary])
 
   ksorted = [sorted(labels[y], key=lambda x: x['score'], reverse=True) for y in range(len(labels))]
