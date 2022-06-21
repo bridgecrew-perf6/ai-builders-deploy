@@ -17,7 +17,10 @@ st.write('(Recommended setup: zdr5/1454370)')
 def define_classifier():
   classifier = pipeline(model=predmodel, revision=revision, return_all_scores=True)
 
-st.button('Load model', onclick=define_classifier())
+if st.button('Load model'):
+  define_classifier()
+else:
+  pass
 
   
 labels = classifier([summary])
