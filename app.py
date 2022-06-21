@@ -19,18 +19,20 @@ def define_classifier():
 
 if st.button('Load model'):
   define_classifier()
+  labels = classifier([summary])
+
+  ksorted = [sorted(labels[y], key=lambda x: x['score'], reverse=True) for y in range(len(labels))]
+
+
+  st.write('Predicted labels: ')
+  for x in ksorted[0]:
+    st.write(x['label'] + ':', x['score'])
+    
 else:
   pass
 
   
-labels = classifier([summary])
 
-ksorted = [sorted(labels[y], key=lambda x: x['score'], reverse=True) for y in range(len(labels))]
-
-
-st.write('Predicted labels: ')
-for x in ksorted[0]:
-  st.write(x['label'] + ':', x['score'])
   
 st.write('---')
 st.write('check out the [blog post](https://medium.com/@syntrp2/nlp-for-genre-predictions-on-ffnet-an-antithesis-to-utilitarianism-4380524ca1fc)!')
